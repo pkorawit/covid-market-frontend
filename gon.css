@@ -50,10 +50,9 @@ div[data="footer"] {
 
 .profile{
   border-radius: 50%;
-  background-image: url(https://cdn-makehimyours.pressidium.com/wp-content/uploads/2016/11/Depositphotos_9830876_l-2015Optimised.jpg);
-  width: 200px;
-  height: 200px;
-
+  background-image: url(imags/640px-ธงชาติไทย.png);
+  width: 125px;
+  height: 125px;
 }
 
 .center {
@@ -61,4 +60,16 @@ div[data="footer"] {
   margin-left: auto;
   margin-right: auto;
   
+}
+
+.user {
+  color: white;
+  font-size: 17px;
+}
+
+.menu {
+  color: black;
+  font-size: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
