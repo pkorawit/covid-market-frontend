@@ -35,10 +35,16 @@ div[data="footer"] {
   background-image: url(./imags/ภป-สังคม.jpg);
   background-size: contain;
   background-color: black;
-  opacity: 0.5;
+  opacity: 0.2;
 }
 .imagDetail {
   background-image: url(./imags/640px-ธงชาติไทย.png);
   background-size: auto;
   border-radius: 50%;
+}
+#map {
+  height: 250px;
+  background-color: blue;
+  color: #cc3333;
+  text-align: center;
 }
