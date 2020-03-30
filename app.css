@@ -13,10 +13,7 @@ h1 {
 
   color: #ffffff;
 }
-h3 {
-  color: #ffffff;
-}
-.h5 {
+.white {
   color: #ffffff;
 }
 
@@ -33,4 +30,10 @@ div[data="footer"] {
   width: 100%;
   text-align: center;
   color: #ffffff;
+}
+.jumbotron{
+  background-image: url(./imags/ภป-สังคม.jpg);
+  background-size: cover;
+  background-color: black;
+  opacity: 0.5;
 }
