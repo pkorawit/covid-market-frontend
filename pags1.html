@@ -10,16 +10,38 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        
-        <link rel="stylesheet" href="./app.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="./app.css">
 </head>
 
 <body>
+    <div class="container">
 
-    <div class="container text-center" onclick="goP1()">
-       <h1>PLATFORM LOGO</h1> 
+        <div class="card-deck mt-5">
+            <div class="card text-center" onclick="goP2()">
+                <div class="card-body">
+                    <span class="material-icons" style="font-size: 100px;">list_alt</span>
+                    <h5 class="card-title">สำหรับ สั่งอาหาร</h5>
+                </div>
+            </div>
+
+            <div class="card text-center" onclick="goP2()">
+                <div class="card-body">
+                    <span class="material-icons" style="font-size: 100px;">store</span>
+                    <h5 class="card-title">สำหรับ ร้านค้า ร้านอาหาร</h5>
+                </div>
+            </div>
+        </div>
+
     </div>
-    
+
+    <!-- footer -->
+    <div data="footer" class="text-uppercase">
+        WeMarket PLATFORM V. 1.01
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -32,11 +54,11 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-        <script>
-            function goP1(){
-                location.href = "pags1.html";
-            }
-        </script>
+    <script>
+        function goP2() {
+            location.href = "pags2.html";
+        }
+    </script>
 </body>
 
 </html>

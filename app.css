@@ -1,0 +1,36 @@
+body {
+  background: #cc3333;
+}
+h1 {
+  margin-top: 350px;
+
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 74px;
+  text-align: center;
+
+  color: #ffffff;
+}
+h3 {
+  color: #ffffff;
+}
+.h5 {
+  color: #ffffff;
+}
+
+.ConCard {
+  width: 300px;
+  left: 103px;
+  text-align: center;
+}
+div[data="footer"] {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+}
