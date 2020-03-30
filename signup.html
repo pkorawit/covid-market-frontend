@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Firebase phone authen</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Bai+Jamjuree:300,400,700&display=swap');
+
+        * {
+            font-family: 'Bai Jamjuree', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #CC3333;">
+        <a class="navbar-brand" href="#">WeMarket</a>
+    </nav>
+    <div class="container">
+        <div class="row mt-3 vh-100">
+            <div class="col-12  align-middle">
+                <div class="form-group">
+                    <label for="telno">เบอร์โทร</label>
+                    <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" aria-describedby="helpId"
+                        placeholder="" value="+66">
+                    <small id="helpId" class="form-text text-muted">เบอร์โทรศัพท์เพื่อยืนยันตัวตน</small>
+                </div>
+                <input name="signin" id="signin" class="btn btn-primary w-100 mb-2" type="button" value="ขอรหัสผ่าน" onclick="submitPhoneNumberAuth()">
+                <div id="recaptcha-container" class="text-center"></div>
+                <div class="form-group">
+                    <label for="telno">รหัสผ่าน</label>
+                    <input type="text" class="form-control" name="code" id="code" aria-describedby="helpId"
+                        placeholder="" value="">
+                    <small id="helpId" class="form-text text-muted">รหัสผ่านจาก SMS</small>
+                </div>                
+                <input name="code" id="code" class="btn btn-primary w-100" type="button" value="ล็อกอิน" onclick="submitPhoneNumberAuthCode()">                
+            </div>
+        </div>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAnsmx5zcRR0pL9Lzwua6IxbQpuQsdDJGI",
+            authDomain: "covid19-market.firebaseapp.com",
+            databaseURL: "https://covid19-market.firebaseio.com",
+            projectId: "covid19-market",
+            storageBucket: "covid19-market.appspot.com",
+            messagingSenderId: "693666031492",
+            appId: "1:693666031492:web:88ede6dda8170d51391fd1",
+            measurementId: "G-6KD29NPYF0"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Create a Recaptcha verifier instance globally
+        // Calls submitPhoneNumberAuth() when the captcha is verified
+        window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+            "recaptcha-container",
+            {
+                size: "normal",
+                callback: function (response) {
+                    submitPhoneNumberAuth();
+                }
+            }
+        );
+
+        // This function runs when the 'sign-in-button' is clicked
+        // Takes the value from the 'phoneNumber' input and sends SMS to that phone number
+        function submitPhoneNumberAuth() {
+            var phoneNumber = document.getElementById("phoneNumber").value;
+            var appVerifier = window.recaptchaVerifier;
+            firebase
+                .auth()
+                .signInWithPhoneNumber(phoneNumber, appVerifier)
+                .then(function (confirmationResult) {
+                    window.confirmationResult = confirmationResult;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+
+        // This function runs when the 'confirm-code' button is clicked
+        // Takes the value from the 'code' input and submits the code to verify the phone number
+        // Return a user object if the authentication was successful, and auth is complete
+        function submitPhoneNumberAuthCode() {
+            var code = document.getElementById("code").value;
+            confirmationResult
+                .confirm(code)
+                .then(function (result) {
+                    var user = result.user;
+                    console.log(user);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+
+        //This function runs everytime the auth state changes. Use to verify if the user is logged in
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                console.log("USER LOGGED IN");
+                window.location.href = "home.html"
+            } else {
+                // No user is signed in.
+                console.log("USER NOT LOGGED IN");
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>
