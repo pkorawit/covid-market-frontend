@@ -31,9 +31,14 @@ div[data="footer"] {
   text-align: center;
   color: #ffffff;
 }
-.jumbotron{
+.jumbotron {
   background-image: url(./imags/ภป-สังคม.jpg);
-  background-size: cover;
+  background-size: contain;
   background-color: black;
   opacity: 0.5;
+}
+.imagDetail {
+  background-image: url(./imags/640px-ธงชาติไทย.png);
+  background-size: auto;
+  border-radius: 50%;
 }
