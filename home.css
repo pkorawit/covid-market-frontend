@@ -63,3 +63,37 @@ body {
     margin-top: 20px;
   }
 
+  h3 {
+      font-size: 23px;
+      color: white;
+  }
+
+  p {
+      text-align: center;
+      font-size: 12px;
+  }
+
+  .holder_wrap_img {
+    position: relative;
+    margin: auto;
+    display: block;
+    height: 120px;
+    position: absolute;
+    /* กำหนดการจัดตำแหน่งส่วนพื้นที่คลุมเนื้อหารุปและข้อความซ้อนทับ */
+}
+
+
+/* css ซ้อนทับ ชิดขอบบน */
+.inner_position_top {
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    display: block;
+    height: 50px;
+    /* กำหนดความสูงส่วนของเนื้อหาที่นำมาซ้อนทับ */
+    width: 100%;
+    /* กำหนดความกว้างของเนื้อหาที่นำมาซ้อนทับ แบบขยายเต็ม */
+    top: 0px;
+    /* css กำหนดชิดด้านบน  */
+    z-index: 999;
+}
