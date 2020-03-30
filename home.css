@@ -43,3 +43,7 @@ body {
     width: 100%;
     text-align: center;
   }
+
+  .navbar-default {
+      background-color: #cc3333;
+  }
