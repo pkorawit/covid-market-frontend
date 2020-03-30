@@ -14,24 +14,30 @@
     <link rel="stylesheet" href="./app.css">
 </head>
 
-<body>
+<body class="body">
 
     <div class="container">
 
         <h3>LOGO PLATFORM</h3>
 
-        <h5 class="h5">+66 1234567</h5>
-
-<!-- ยังไม่เสร็จนะครับ -->
-
-
-
+        <div class="row mt-5">
+            <div class="col-lg-6 col-sm-12">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <b> +66 1234567</b>
+                        </div>
+                    </div>
+                    <input type="number" class="form-control">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 text-center">
+                <label class="my-1 mr-2 h5" for="inlineFormCustomSelectPref" onclick="goHomepags()">ขอ OTP
+                    อีกครั้ง</label>
+            </div>
+        </div>
 
     </div>
-
-
-
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -44,6 +50,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <script>
+        function goHomepags() {
+            location.href = "home.html";
+        }
+    </script>
+
 </body>
 
 </html>
