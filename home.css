@@ -9,6 +9,7 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
+    border: 1px solid #CCCCCC;
   }
   
   .navbar a {
@@ -69,8 +70,11 @@ body {
   }
 
   p {
-      text-align: center;
-      font-size: 12px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
   }
 
   .holder_wrap_img {
@@ -96,4 +100,17 @@ body {
     top: 0px;
     /* css กำหนดชิดด้านบน  */
     z-index: 999;
+}
+
+.image {
+  border-radius: 50%;
+}
+
+.show {
+  width: 363px;
+  height: 137px;
+  left: 23px;
+  top: 81px;
+
+  border-radius: 10px;
 }
