@@ -35,7 +35,10 @@ div[data="footer"] {
   background-image: url(./imags/ภป-สังคม.jpg);
   background-size: contain;
   background-color: black;
-  opacity: 0.2;
+  opacity: 0.6;
+}
+.jumbotron p {
+  color: black;
 }
 .imagDetail {
   background-image: url(./imags/640px-ธงชาติไทย.png);
