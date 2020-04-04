@@ -10,6 +10,7 @@ body {
     bottom: 0;
     width: 100%;
     border: 1px solid #CCCCCC;
+    transform: rotate(-0.28deg);
   }
   
   .navbar a {
@@ -19,7 +20,7 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 15px;
   }
   
   .navbar a:hover {
@@ -99,15 +100,6 @@ body {
 
 .image {
   border-radius: 50%;
-}
-
-.show {
-  width: 363px;
-  height: 137px;
-  left: 23px;
-  top: 81px;
-
-  border-radius: 10px;
 }
 
 h2 {
