@@ -104,9 +104,6 @@ body {
 
 h2 {
   text-align: center;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
   font-size: 25px;
   line-height: 42px;
 }
@@ -127,9 +124,6 @@ h2 {
 }
 
 h1 {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
   font-size: 36px;
   line-height: 42px;
 }
