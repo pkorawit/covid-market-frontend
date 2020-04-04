@@ -43,8 +43,12 @@ div[data="footer"] {
 }
 
 #map {
-  height: 250px;
-  background-color: blue;
-  color: #cc3333;
+  border-style: solid;
+  border-color: red;
+
+  height: 150px;
+  background-image: url(./imags/map.png);
+  background-size: contain;
+  background-repeat: no-repeat;
   text-align: center;
 }
